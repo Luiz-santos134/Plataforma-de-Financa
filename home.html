@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/83da9facc2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="top-container">
+            <div class="perfil">
+                <div class="imagemUser">
+                    <img src="fotoPerfil.png" alt="Foto de perfil">
+                </div>
+
+                <div class="infosUser">
+                    <p id="nome">Nome User</p>
+                    <p id="patente">Patente na familia</p>
+                </div>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <button data-page="dashboard" onclick="navigate('dashboard')">
+                <i class="fas fa-home"></i> 
+                <p>Dashboard</p>
+            </button>
+
+            <button data-page="registrar" onclick="navigate('registrar')">
+                <i class="fas fa-file-lines"></i> 
+                <p>Registrar</p>
+            </button>
+
+            <button data-page="contas" onclick="navigate('contas')">
+                <i class="fas fa-wallet"></i> 
+                <p>Contas</p>
+            </button>
+
+            <button data-page="relatorios" onclick="navigate('relatorios')">
+                <i class="fas fa-chart-line"></i> 
+                <p>Relatórios</p>
+            </button>
+
+            <button data-page="configuracoes" onclick="navigate('configuracoes')">
+                <i class="fas fa-cog"></i> 
+                <p>Configurações</p>
+            </button>
+        </nav>
+    </aside>
+
+    <main id="app">
+        <!-- Conteúdo dinâmico será carregado aqui -->
+        
+    </main>
+</body>
+<script src="app.js"></script>
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</html>
