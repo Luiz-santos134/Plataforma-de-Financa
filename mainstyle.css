@@ -1,4 +1,3 @@
-
 /* Seleciona campos preenchidos automaticamente */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -11,14 +10,14 @@ input:-webkit-autofill:active {
     /* 3. Evita a cor padrão do navegador em preenchimentos rápidos */
     transition: background-color 5000s ease-in-out 0s;
 }
-:root{
+:root {
     --fundo: #0c0c0c;
     --fundoClaro: #161616;
     --texto: #d8d9fc;
     --textoOpaco: #f5f5f586;
     --detalhes: #3f3f3f;
 }
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -27,12 +26,13 @@ input:-webkit-autofill:active {
     color: var(--texto);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
-body{
+body {
     background: linear-gradient(to right, var(--fundo), rgb(0, 42, 121));
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
-header{
+header {
     background-color: var(--detalhes);
     width: 85%;
     height: 8dvh;
@@ -44,7 +44,7 @@ header{
     align-items: center;
     gap: 20px;
 }
-header ul{
+header ul {
     width: 400px;
     height: 40px;
     background-color: rgb(90, 90, 90);
@@ -55,7 +55,7 @@ header ul{
     justify-content: center;
     gap: 20px;
 }
-.marca{
+.marca {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 2px;
     width: 20%;
@@ -63,14 +63,14 @@ header ul{
     font-size: 15pt;
     border-radius: 20px;
 }
-.menu{
+.menu {
     width: 30%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-.menu ul{
+.menu ul {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -78,7 +78,7 @@ header ul{
     gap: 50px;
     font-size: 15pt;
 }
-.botoes{
+.botoes {
     width: 22%;
     display: flex;
     flex-direction: row;
@@ -87,7 +87,7 @@ header ul{
     border-radius: 20px;
     gap: 20px;
 }
-.botoes a{
+.botoes a {
     height: 40px;
     background-color: transparent;
     border: none;
@@ -100,84 +100,91 @@ header ul{
     display: inline-block;
     margin-right: 10px;
 }
-#cadastrar{
+#cadastrar {
     background-color: rgb(57, 57, 255);
 }
-#login:hover{
+#login:hover {
     color: rgb(62, 114, 255);
     transform: scale(1.1);
 }
-#cadastrar:hover{
+#cadastrar:hover {
     /* background-color: rgb(4, 4, 141); */
-    box-shadow: inset 0px  1px 10px 2px rgba(0, 0, 0, 0.527);
+    box-shadow: inset 0px 1px 10px 2px rgba(0, 0, 0, 0.527);
     transform: scale(1.03);
 }
 
 /* ================================================================ */
-
 /* ====== Login ====== */
-.login{
+.login {
     width: 100dvw;
     height: 100dvh;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
-}
-.container{
     background: url('img_Login.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    border-radius: 20px;
-    width: 60%;
-    height: 80%;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    align-items: center;
 }
-#voltar{
+#voltar {
     position: absolute;
-    top: 13%;
-    left: 22%;
+    top: 2%;
+        left: 2%;
     animation: movimento_arrow 2s linear infinite;
     transition: all 1.5s ease;
 }
 @keyframes movimento_arrow {
-    from, to{
+from,
+    to {
         transform: translateX(10px);
     }
-    50%{
+50% {
         transform: translateX(0px);
     }
 }
-#img_login{
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
+.mensagem h1 {
+    text-shadow: 0px 0px 10px rgb(0, 17, 255);
+    text-align: start;
+    font-size: 2.5rem;
 }
-.infos_form{
+.mensagem {
+    position: absolute;
+    top: 15%;
+    left: 20%;
+}
+
+.mensagem img {
+    width: 40%;
+    transition: all 2s ease;
+}
+
+.infos_form {
     padding: 10px;
-    width: 50%;
-    height: 98%;
+    width: 40%;
+        height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     background-color: transparent;
     backdrop-filter: blur(8px);
     border-radius: 10px;
 }
-.infos_form form{
-    width: 80%;
-    height: 50%;
+.infos_form form {
+    width: 70%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     gap: 30px;
+    user-select: none;
 }
-input{
+label {
+    width: 100%;
+}
+
+input {
     width: 100%;
     outline: none;
     background-color: transparent;
@@ -186,13 +193,82 @@ input{
     border-radius: 10px;
     transition: all 0.5s ease;
 }
-input[type="text"]:hover{
+input[type="text"]:hover {
     transform: scale(1.03);
 }
-input[type="text"]:focus{
+input[type="text"]:focus {
     transform: scale(1.05);
 }
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     cursor: pointer;
     transform: scale(1.03);
+}
+form ul {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--detalhes);
+    justify-content: center;
+    border-radius: 10px;
+    border: 1px solid white;
+    background-color: transparent;
+}
+
+form ul li {
+    width: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+form ul li i {
+    font-size: 25px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    padding: 5px;
+    width: 90%;
+    height: 85%;
+}
+
+form ul li i:hover {
+    background-color: rgba(128, 128, 128, 0.329);
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    transform: scale(1.1);
+    /* color: rgb(45, 110, 250);
+    box-shadow: 0 0 10px 1px; */
+}
+
+form ul li i:active {
+    transform: translateY(10px);
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-align: center;
+    font-weight: 500;
+    color: var(--textoOpaco);
+    transition: all 0.3s ease;
+    border-radius: 20px;
+    padding: 10px;
+    width: 50%;
+    height: 40px;
+    font-size: 12pt;
+}
+
+nav a:hover {
+    color: rgb(45, 110, 250);
+    text-decoration: underline;
+    transform: scale(1.1);
 }
